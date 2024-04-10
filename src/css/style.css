@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.offscreen {
+	position: absolute;
+	left: -10000px;
+}
+
+input,
+button {
+	font: inherit;
+}
+
+html {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 1rem;
+	background-color: #333;
+	color: #fff;
+}
+
+main {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+}
+
+section {
+	padding: 0.5rem;
+	border: 1px solid whitesmoke;
+	border-radius: 10px;
+}
+
+.button {
+	min-width: 48px;
+	min-height: 48px;
+	border-radius: 10px;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.newItemEntry {
+	margin-bottom: 1rem;
+	position: sticky;
+	top: 0;
+}
+
+.newItemEntry__form {
+	display: flex;
+	gap: 0.25rem;
+	font-size: 1.5rem;
+}
+
+.newItemEntry__input {
+	flex-grow: 1;
+	width: calc(100% - (0.25rem + 48px));
+	padding: 0.5em;
+	border: 2px solid whitesmoke;
+	border-radius: 10px;
+}
+
+.newItemEntry__button {
+	padding: 0.75em;
+	border: 3px dashed whitesmoke;
+	background-color: transparent;
+	color: whitesmoke;
+}
+
+.newItemEntry__button:hover,
+.newItemEntry__button:focus {
+	color: limegreen;
+}
+
+.listContainer {
+	display: flex;
+	flex-flow: column;
+	flex-grow: 1;
+	gap: 1rem;
+	font-size: 1.5rem;
+}
+
+.listTitle {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.listTitle__button {
+	padding: 0.25em;
+	background-color: transparent;
+	color: whitesmoke;
+}
+
+
+.listItems {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 1;
+	list-style-type: none;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding-top: 1em;
+}
+
+.item>input[type="checkbox"] {
+	min-width: 2.5rem;
+	min-height: 2.5rem;
+	cursor: pointer;
+	text-align: center;
+}
+
+.item>input[type="checkbox"]:checked+label {
+	text-decoration: line-through;
+}
+
+.item>label {
+	flex-grow: 1;
+	word-break: break-all;
+}
+
+.item>button:hover,
+.item>button:focus {
+	color: red;
+}
+
+@media (min-width: 768px) {
+	section {
+		padding: 1rem;
+	}
+
+	.newItemEntry__form {
+		gap: 0.5rem;
+	}
+}
